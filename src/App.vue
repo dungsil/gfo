@@ -21,7 +21,18 @@ useHead({
   title: 'GFO · Github Flavored Open Graph',
   meta: [
     { name: 'description', content: 'Generate Github-like Open Graph image' },
-    { name: 'og:image', content: '/api?format=png&type=issue&repository=dungsil%2Fgfo&title=🛸+GFO+·+GitHub+Flavored+Open+Graph&description=Generate+Github-like+Open+Graph+image&image=https%3A%2F%2Fapi.iconify.design%2Flogos%2Fgithub-icon.svg&author=dungsil&date=2022-03-04&color_bar=%236667ab&avatar=gravatar&gravatar=mail%40kyg.kr' }
+
+    { name: 'og:type', content: 'website' },
+    { name: 'og:url', content: 'https://gfo.vercel.app' },
+    { name: 'og:title', content: 'GFO · Github Flavored Open Graph' },
+    { name: 'og:description', content: 'Generate Github-like Open Graph image' },
+    { name: 'og:image', content: '/api?format=png&type=issue&repository=dungsil%2Fgfo&title=🛸+GFO+·+GitHub+Flavored+Open+Graph&description=Generate+Github-like+Open+Graph+image&image=https%3A%2F%2Fapi.iconify.design%2Flogos%2Fgithub-icon.svg&author=dungsil&date=2022-03-04&color_bar=%236667ab&avatar=gravatar&gravatar=mail%40kyg.kr' },
+
+    { name: 'twitter:type', content: 'website' },
+    { name: 'twitter:url', content: 'https://gfo.vercel.app' },
+    { name: 'twitter:title', content: 'GFO · Github Flavored Open Graph' },
+    { name: 'twitter:description', content: 'Generate Github-like Open Graph image' },
+    { name: 'twitter:image', content: '/api?format=png&type=issue&repository=dungsil%2Fgfo&title=🛸+GFO+·+GitHub+Flavored+Open+Graph&description=Generate+Github-like+Open+Graph+image&image=https%3A%2F%2Fapi.iconify.design%2Flogos%2Fgithub-icon.svg&author=dungsil&date=2022-03-04&color_bar=%236667ab&avatar=gravatar&gravatar=mail%40kyg.kr' }
   ]
 })
 

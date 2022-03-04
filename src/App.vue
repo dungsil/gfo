@@ -48,7 +48,7 @@ onMounted(() => {
           <AppInput id="description" name="description" label="Description" type="textarea" value="Generate Github-like Open Graph image" />
           <AppInput id="image" name="image" label="Main image URL" type="url" value="https://api.iconify.design/logos/github-icon.svg" />
           <AppInput id="author" name="author" label="Author" type="text" value="dungsil" />
-          <AppInput id="date" name="date" label="Date" type="date" value="2022.03.04" />
+          <AppInput id="date" name="date" label="Date" type="date" value="2022-03-04" />
           <AppInput id="color" name="color_bar" label="Border color" type="color" value="#6667AB" />
           <AppInputGroup legend="Avatar" class="my-8">
             <div class="flex flex-row justify-around items-center">

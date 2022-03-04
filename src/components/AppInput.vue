@@ -52,4 +52,8 @@ input {
   @apply bg-transparent;
   @apply outline-none;
 }
+
+input[type=color] {
+  @apply h-3em;
+}
 </style>

@@ -1,5 +1,8 @@
 .idea/
 .vercel/
 public/
+dist/
 node_modules/
+
+
 .vercel

@@ -64,6 +64,9 @@ async function launch(): Promise<Browser> {
   await chrome.font('https://rawcdn.githack.com/orioncactus/pretendard/f0a88392163400ce678039b909fb0a483c7fbc02/dist/public/static/Pretendard-Regular.otf')
   await chrome.font('https://rawcdn.githack.com/orioncactus/pretendard/f0a88392163400ce678039b909fb0a483c7fbc02/dist/public/static/Pretendard-Bold.otf')
 
+  // add emoji
+  await chrome.font('https://rawcdn.githack.com/googlefonts/noto-emoji/9a5261d871451f9b5183c93483cbd68ed916b1e9/fonts/NotoColorEmoji.ttf')
+
   return core.launch({
     args: chrome.args,
     executablePath: await chrome.executablePath,

@@ -6,9 +6,11 @@ export interface Options {
   repository?: string,
   title?: string,
   description?: string,
+  image?: string,
   iconify?: string,
   gravatar?: string,
   url?: string,
+  color_bar: string,
 }
 
 export interface IssueOptions extends Options {
@@ -17,6 +19,7 @@ export interface IssueOptions extends Options {
   title: string,
   description: string,
   author: string,
+  date: string,
 }
 
 export function paramsToOptions(params: URLSearchParams): Options {

@@ -1,117 +1,175 @@
-import { getAvatarUrl } from '../utils/get-avatar-url'
+import { getImageUrl } from '../utils/get-image-url'
 import type { IssueOptions } from '../libs/params-to-options'
 
 export function makeIssueTemplate(options: IssueOptions) {
-  const avatarUrl = getAvatarUrl(options)
+  const avatarUrl = getImageUrl(options)
 
   return `<!doctype html>
-<html lang="ko">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
 
-    <style>
-        body {
-            position: relative;
-            display: flex;
-            width: 1200px;
-            height: 630px;
-            margin: 0;
-            padding-top: 70px;
-            background-color: #fff;
-            box-sizing: border-box;
+  <style>
+    body {
+      width: 1200px;
+      height: 630px;
+      margin: 0;
+      background-color: white;
 
-            font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
-            font-weight: 400;
-            font-size: 17px;
-            line-height: 1.5;
-            letter-spacing: 0.0625em;
-        }
+      font-family: Pretendard, sans-serif;
+      font-weight: 400;
+      font-size: 32px;
+      color: #343a40;
+    }
 
-        h1,p {
-            margin: 0;
-        }
+    p {
+      margin: 0;
+    }
 
-        .text-container {
-            position: absolute;
-            top: 70px;
-            left: 70px;
-        }
+    .container {
+      display: grid;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
 
-        .image-container {
-            position: absolute;
-            top: 96px;
-            right: 35px;
-        }
+      grid-template-rows: repeat(12, 1fr);
+      grid-template-columns: repeat(12, 1fr);
+      grid-gap: 0.25rem;
+    }
 
-        #repository {
-        }
+    .tag {
+      display: inline-grid;
+      grid-column: 2 / span 8;
+      grid-row: 3;
+      justify-content: flex-start;
+      align-items: center;
 
-        #title,
-        #description {
-            display: -webkit-box;
-            word-break: keep-all;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 2;
-        }
+      font-size: 0.6em;
+      color: #495057;
+    }
 
-        #title {
-            max-width: 700px;
-            height: 150px;
+    .content {
+      grid-column: 2 / span 8;
+      grid-row: 4 / span 6;
+      margin: 0;
+    }
 
-            font-size: 50px;
-            font-weight: 700;
-        }
+    .content > .title,
+    .content > .description {
+      display: -webkit-box;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-box-orient: vertical;
+      word-break: keep-all;
+    }
 
-        #description {
-            max-width: 700px;
-            margin-top: 30px;
-        }
+    .title {
+      max-height: 210px;
+      -webkit-line-clamp: 3;
 
-        #created {
-            position: absolute;
-            left: 70px;
-            bottom: 40px;
-            line-height: 60px;
-        }
+      line-height: 1;
+      font-weight: 700;
+      font-size: 2em;
+    }
 
-        #created > img,
-        #created b {
-            vertical-align: middle;
-        }
+    .title span {
+      vertical-align: text-top;
+    }
 
-        #created b {
-            margin-left: 0.5em;
-        }
+    .description {
+      height: 103px;
+      margin-top: 47px;
+      -webkit-line-clamp: 3;
+      line-height: 1.25;
+      font-size: 0.8em;
+      color: #495057;
+    }
 
-        #bar {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            height: 20px;
-            background-color: blue;
-        }
-    </style>
+    .description span {
+      vertical-align: text-top;
+    }
+
+    .image {
+      display: inline-grid;
+      grid-column: 10 / span 2;
+      grid-row: 3 / span 5;
+    }
+
+    .image img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+    }
+
+    .author {
+      grid-column: 2  / span 8;
+      grid-row: 11;
+
+      font-size: 0.5em;
+    }
+
+    .author-container > * {
+      vertical-align: middle;
+    }
+
+    .author img {
+      width: 2.5em;
+      height: 2.5em;
+      margin-right: 0.5em;
+      border-radius: 50%;
+    }
+
+    .color-bar {
+      display: grid;
+      grid-column: span 12;
+      grid-row: 12;
+      justify-content: flex-start;
+      align-items: flex-end;
+    }
+
+    .color-bar::after {
+      width: 1200px;
+      height: 24px;
+      content: '';
+
+      background-color: ${options.color_bar};
+    }
+  </style>
 </head>
 <body>
-    <div class="text-container">
-        <p id="repository">${options.repository}</p>
-        <h1 id="title">${options.title}</h1>
-        <p id="description">${options.description}</p>
-    </div>
+<div class="container">
+  <div class="tag">
+    ${options.repository}
+  </div>
+  <div class="content">
+    <p class="title">
+      <span>${options.title}</span>
+    </p>
 
-    <div class="image-container">
-        <img src="${avatarUrl}" width="200" height="200" alt="" />
+    <div class="description">
+      <span>${options.description}</span>
     </div>
+  </div>
 
-    <div id="created">
-        <img src="${avatarUrl}" width="60" height="60" alt="" />
-        <b>${options.author}</b>
+  <div class="image">
+    <img src="${options.image}" alt="" />
+  </div>
+
+  <div class="author">
+    <div class="author-container">
+      <img src="${avatarUrl}" alt="" />
+      <span>
+          <b>${options.author}</b> · ${options.date}
+        </span>
     </div>
+  </div>
 
-    <div id="bar"></div>
+  <div class="color-bar"></div>
+</div>
 </body>
 </html>`
 }

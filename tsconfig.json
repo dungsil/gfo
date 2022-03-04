@@ -4,12 +4,6 @@
     "target": "ESNext",
     "moduleResolution": "Node",
     "strict": true,
-    "types": [
-      "@types/node",
-      "@types/md5",
-      "vite/client",
-      "vite-plugin-windicss/client"
-    ],
     "allowSyntheticDefaultImports": true
   }
 }

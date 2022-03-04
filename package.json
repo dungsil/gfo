@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "vc dev",
-    "build:web": "cd web && vite-ssg build",
+    "build:web": "vite-ssg build",
     "build": "run-p build:*"
   },
   "dependencies": {

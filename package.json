@@ -4,7 +4,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev:web": "vite dev web",
+    "dev": "vc dev",
     "build:web": "cd web && vite-ssg build",
     "build": "run-p build:*"
   },
@@ -17,6 +17,7 @@
     "vue": "3.2.31"
   },
   "devDependencies": {
+    "puppeteer": "13.4.1",
     "@types/md5": "2.3.2",
     "@types/node": "16.11.25",
     "@vercel/node": "1.13.0",

@@ -1,19 +1,11 @@
 <script lang="ts" setup>
-import { ref, onMounted, Ref } from 'vue'
+import { ref, Ref } from 'vue'
 import { useHead } from '@vueuse/head'
 
 import AppInput from './components/AppInput.vue'
 import AppInputGroup from './components/AppInputGroup.vue'
 import AppCheckbox from './components/AppCheckbox.vue'
 import AppButton from './components/AppButton.vue'
-
-const formats = {
-  png: 'PNG'
-}
-
-const type = {
-  issue: 'Issue'
-}
 
 const avatarType = ref('iconify')
 const form = ref() as Ref<HTMLFormElement>
@@ -32,27 +24,25 @@ useHead({
   ]
 })
 
-onMounted(async () => {
-  await generateImage()
-})
 </script>
 
 <template>
-  <div class="flex flex-col justify-between items-center w-full min-h-screen font-sans font-normal text-lg">
-    <header class="py-8">
-      <h1 class="font-bold text-4xl">🛸 GFO</h1>
+  <div class="flex flex-col items-center w-full min-h-screen">
+    <header>
+      <h1 class="my-8 font-bold text-4xl text-center">🛸 GFO</h1>
     </header>
 
-    <main class="flex flex-col lg:flex-row items-center mx-4">
-      <aside class="w-full lg:w-500px">
+    <div class="flex-grow flex flex-col lg:flex-row justify-around items-center max-w-1600px mx-2">
+      <main class="w-full md:max-w-600px mx-2 mb-8">
         <form ref="form" id="og-form" method="GET" action="/api">
-          <AppInput name="format" label="Image format" type="select" :options="formats" value="png" />
-          <AppInput name="type" label="Template type" type="select" :options="type" value="issue" />
+          <!-- 추후 확장을 위해 사용되는 옵션 -->
+          <input type="hidden" name="format" value="png" />
+          <input type="hidden" name="type" value="issue" />
 
-          <AppInput name="repository" label="Repository" type="text" value="dungsil/gfo" />
-          <AppInput name="author" label="Author" type="text" value="dungsil" />
-          <AppInput name="title" label="Title" type="text" value="GitHub Flavored Open Graph" />
-          <AppInput name="description" label="Description" type="textarea" value="Generate Github-like Open Graph image" />
+          <AppInput id="repository" name="repository" label="Repository" type="text" value="dungsil/gfo" />
+          <AppInput id="author" name="author" label="Author" type="text" value="dungsil" />
+          <AppInput id="title" name="title" label="Title" type="text" value="🛸 GFO · GitHub Flavored Open Graph" />
+          <AppInput id="description" name="description" label="Description" type="textarea" value="Generate Github-like Open Graph image" />
 
           <AppInputGroup legend="Avatar" class="my-8">
             <div class="flex flex-row justify-around items-center">
@@ -62,7 +52,7 @@ onMounted(async () => {
                            type="radio"
                            label="Iconify"
                            model-value="iconify"
-                          :checked="avatarType === 'iconify'" />
+                           :checked="avatarType === 'iconify'" />
 
               <AppCheckbox v-model="avatarType"
                            id="avatar-gravatar"
@@ -81,7 +71,7 @@ onMounted(async () => {
                            :checked="avatarType === 'url'"/>
             </div>
 
-            <div class="w-full mt-4 pt-4 border-t-3 border-gray-500 border-dotted">
+            <div class="w-full mt-8">
               <div v-if="avatarType === 'iconify'">
                 <AppInput id="iconify" name="iconify" type="text" label="Icon" value="logos:github-icon" />
               </div>
@@ -98,15 +88,16 @@ onMounted(async () => {
             Generate
           </AppButton>
         </form>
-      </aside>
+      </main>
+      <figure class="w-full max-w-1024px 2xl:w-1024px m-4 lg:ml-16 shadow-lg">
+        <img ref="preview" src="/api?format=png&type=issue&repository=dungsil%2Fgfo&author=dungsil&title=GitHub+Flavored+Open+Graph&description=Generate+Github-like+Open+Graph+image&avatar=gravatar&gravatar=mail%40kyg.kr" alt="" />
+      </figure>
+    </div>
 
-      <div class="w-full max-w-1200px lg:min-w-50vw ml-32 shadow-lg">
-        <img ref="preview" alt="">
-      </div>
-    </main>
-
-    <footer class="py-4 text-sm text-center text-gray-500">
-      Images created by this API are free to use, and any problems arising from using the API are at your own risk.
+    <footer class="px-2 py-4 text-sm text-center text-gray-500">
+      <p>
+        Images created by this API are free to use, and any problems arising from using the API are at your own risk.
+      </p>
     </footer>
   </div>
 </template>

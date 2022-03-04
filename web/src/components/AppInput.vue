@@ -40,7 +40,7 @@ label {
 }
 
 span {
-  @apply block lg:inline-block mr-auto;
+  @apply block lg:inline-block mr-auto font-500;
 }
 
 select,

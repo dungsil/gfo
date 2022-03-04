@@ -44,6 +44,10 @@ label {
   @apply inline-block;
 }
 
+input + span {
+  @apply font-500;
+}
+
 input + span::before {
   @apply relative inline-block w-20px h-20px mr-1 border-3 border-gray-900 align-middle;
   content: '';

@@ -14,10 +14,9 @@ const preview = ref() as Ref<HTMLImageElement>
 const loadedPreview = ref(true) as Ref<boolean>
 
 async function generateImage() {
-  loadedPreview.value = false
-
   const query = new URLSearchParams(new FormData(form.value) as Record<string, any>).toString()
   preview.value.src = `/api?${query}`
+  loadedPreview.value = false
 }
 
 useHead({
@@ -110,7 +109,8 @@ useHead({
       </main>
 
       <aside class="relative w-970px max-w-full lg:min-w-500px h-auto mt-16 lg:mt-0 lg:ml-16 shadow-lg">
-        <img :class="loadedPreview === true ? [] : ['opacity-10', 'blur-sm']"
+        <img ref="preview"
+             :class="loadedPreview === true ? [] : ['opacity-10', 'blur-sm']"
              class="max-w-full duration-500"
              src="/og-image.png"
              alt=""

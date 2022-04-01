@@ -110,7 +110,12 @@ useHead({
       </main>
 
       <aside class="relative w-970px max-w-full lg:min-w-500px h-auto mt-16 lg:mt-0 lg:ml-16 shadow-lg">
-        <img class="max-w-full duration-500" src="/og-image.png" alt="" :class="loadedPreview === true ? [] : ['opacity-10', 'blur-sm']" />
+        <img :class="loadedPreview === true ? [] : ['opacity-10', 'blur-sm']"
+             class="max-w-full duration-500"
+             src="/og-image.png"
+             alt=""
+             @load="loadedPreview = true"
+        />
       </aside>
     </div>
   </div>

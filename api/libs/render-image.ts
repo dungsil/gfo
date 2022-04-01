@@ -25,7 +25,9 @@ export async function renderImage(html: string, options: Options) {
       ...selectors.map((img) => {
         // Image has already finished loading, let’s see if it worked
         if (img.complete) {
-          return
+          if (img.naturalHeight !== 0) return;
+
+          throw new Error("Image failed to load");
         }
         // Image hasn’t loaded yet, added an event listener to know when it does
         return new Promise((resolve, reject) => {

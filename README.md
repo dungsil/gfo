@@ -1,4 +1,4 @@
-# :ufo: GFO
+# 🛸 GFO
 >  **G**itHub **F**lavored **O**pen Graph generator
 
 ![Sample image](./public/og-image.png)

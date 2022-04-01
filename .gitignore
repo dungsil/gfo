@@ -1,6 +1,7 @@
 .idea/
 .vercel/
 public/
+!public/og-image.png
 dist/
 node_modules/
 

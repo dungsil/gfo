@@ -11,8 +11,11 @@ import AppButton from './components/AppButton.vue'
 const avatarType = ref('iconify')
 const form = ref() as Ref<HTMLFormElement>
 const preview = ref() as Ref<HTMLImageElement>
+const loadedPreview = ref(true) as Ref<boolean>
 
 async function generateImage() {
+  loadedPreview.value = false
+
   const query = new URLSearchParams(new FormData(form.value) as Record<string, any>).toString()
   preview.value.src = `/api?${query}`
 }
@@ -26,7 +29,7 @@ useHead({
     { name: 'og:url', content: 'https://gfo.vercel.app' },
     { name: 'og:title', content: 'GFO · Github Flavored Open Graph' },
     { name: 'og:description', content: 'Generate Github-like Open Graph image' },
-    { name: 'og:image', content: 'https://gfo.vercel.app/api?format=png&type=issue&repository=dungsil%2Fgfo&title=🛸+GFO+·+GitHub+Flavored+Open+Graph&description=Generate+Github-like+Open+Graph+image&image=https%3A%2F%2Fapi.iconify.design%2Flogos%2Fgithub-icon.svg&author=dungsil&date=2022-03-04&color_bar=%236667ab&avatar=gravatar&gravatar=mail%40kyg.kr' },
+    { name: 'og:image', content: 'https://gfo.vercel.app/og-image.png' },
 
     { name: 'twitter:creator', content: '@SpringBootTest' },
     { name: 'twitter:card', content: 'summary_large_image' },
@@ -34,13 +37,10 @@ useHead({
     { name: 'twitter:url', content: 'https://gfo.vercel.app' },
     { name: 'twitter:title', content: 'GFO · Github Flavored Open Graph' },
     { name: 'twitter:description', content: 'Generate Github-like Open Graph image' },
-    { name: 'twitter:image', content: 'https://gfo.vercel.app/api?format=png&type=issue&repository=dungsil%2Fgfo&title=🛸+GFO+·+GitHub+Flavored+Open+Graph&description=Generate+Github-like+Open+Graph+image&image=https%3A%2F%2Fapi.iconify.design%2Flogos%2Fgithub-icon.svg&author=dungsil&date=2022-03-04&color_bar=%236667ab&avatar=gravatar&gravatar=mail%40kyg.kr' }
+    { name: 'twitter:image', content: 'ttps://gfo.vercel.app/og-image.png' }
   ]
 })
 
-onMounted(() => {
-  generateImage()
-})
 </script>
 
 <template>
@@ -49,8 +49,8 @@ onMounted(() => {
       <h1 class="my-8 font-bold text-4xl text-center">🛸 GFO</h1>
     </header>
 
-    <div class="flex-grow flex flex-col lg:flex-row justify-around items-center max-w-1600px mx-2">
-      <main class="w-full md:max-w-550px mx-2 mb-8">
+    <div class="flex-grow flex flex-col lg:flex-row justify-around items-center w-full max-w-1600px mx-2">
+      <main class="w-full xl:max-w-550px mx-2 mb-8">
         <form ref="form" id="og-form" method="GET" action="/api">
           <!-- 추후 확장을 위해 사용되는 옵션 -->
           <input type="hidden" name="format" value="png" />
@@ -60,9 +60,6 @@ onMounted(() => {
           <AppInput id="title" name="title" label="Title" type="text" value="🛸 GFO · GitHub Flavored Open Graph" />
           <AppInput id="description" name="description" label="Description" type="textarea" value="Generate Github-like Open Graph image" />
           <AppInput id="image" name="image" label="Main image URL" type="url" value="https://api.iconify.design/logos/github-icon.svg" />
-          <AppInput id="author" name="author" label="Author" type="text" value="dungsil" />
-          <AppInput id="date" name="date" label="Date" type="date" value="2022-03-04" />
-          <AppInput id="color" name="color_bar" label="Border color" type="color" value="#6667AB" />
           <AppInputGroup legend="Avatar" class="my-8">
             <div class="flex flex-row justify-around items-center">
               <AppCheckbox v-model="avatarType"
@@ -102,6 +99,9 @@ onMounted(() => {
               </div>
             </div>
           </AppInputGroup>
+          <AppInput id="author" name="author" label="Author" type="text" value="dungsil" />
+          <AppInput id="date" name="date" label="Date" type="date" value="2022-03-04" />
+          <AppInput id="color" name="color_bar" label="Border color" type="color" value="#6667AB" />
 
           <AppButton @click.prevent="generateImage" blocked>
             Generate
@@ -109,15 +109,9 @@ onMounted(() => {
         </form>
       </main>
 
-      <figure class="w-full max-w-1024px 2xl:w-1024px m-4 lg:ml-16 shadow-lg">
-        <img ref="preview" src="" alt="" />
-      </figure>
+      <aside class="relative w-970px max-w-full lg:min-w-500px h-auto mt-16 lg:mt-0 lg:ml-16 shadow-lg">
+        <img class="max-w-full duration-500" src="/og-image.png" alt="" :class="loadedPreview === true ? [] : ['opacity-10', 'blur-sm']" />
+      </aside>
     </div>
-
-    <footer class="px-2 py-4 text-sm text-center text-gray-500">
-      <p>
-        Images created by this API are free to use, and any problems arising from using the API are at your own risk.
-      </p>
-    </footer>
   </div>
 </template>

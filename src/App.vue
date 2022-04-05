@@ -36,7 +36,7 @@ useHead({
     { name: 'twitter:url', content: 'https://gfo.vercel.app' },
     { name: 'twitter:title', content: 'GFO · Github Flavored Open Graph' },
     { name: 'twitter:description', content: 'Generate Github-like Open Graph image' },
-    { name: 'twitter:image', content: 'ttps://gfo.vercel.app/og-image.png' }
+    { name: 'twitter:image', content: 'https://gfo.vercel.app/og-image.png' }
   ]
 })
 

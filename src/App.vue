@@ -9,6 +9,7 @@ import AppCheckbox from './components/AppCheckbox.vue'
 import AppButton from './components/AppButton.vue'
 
 const avatarType = ref('iconify')
+const title = ref('🛸 GFO · GitHub Flavored Open Graph')
 const form = ref() as Ref<HTMLFormElement>
 const preview = ref() as Ref<HTMLImageElement>
 const loadedPreview = ref(true) as Ref<boolean>
@@ -40,6 +41,10 @@ useHead({
   ]
 })
 
+function copyUrl () {
+  navigator.clipboard.writeText(preview.value.src)
+  alert('Copied to clipboard')
+}
 </script>
 
 <template>
@@ -56,7 +61,7 @@ useHead({
           <input type="hidden" name="type" value="issue" />
 
           <AppInput id="repository" name="repository" label="Repository" type="text" value="dungsil/gfo" />
-          <AppInput id="title" name="title" label="Title" type="text" value="🛸 GFO · GitHub Flavored Open Graph" />
+          <AppInput v-model:value="title" id="title" name="title" label="Title" type="text" />
           <AppInput id="description" name="description" label="Description" type="textarea" value="Generate Github-like Open Graph image" />
           <AppInput id="image" name="image" label="Main image URL" type="url" value="https://api.iconify.design/logos/github-icon.svg" />
           <AppInputGroup legend="Avatar" class="my-8">
@@ -108,14 +113,24 @@ useHead({
         </form>
       </main>
 
-      <aside class="relative w-970px max-w-full lg:min-w-500px h-auto mt-16 lg:mt-0 lg:ml-16 shadow-lg">
+      <aside class="relative w-970px max-w-full lg:min-w-500px h-auto mt-16 lg:mt-0 lg:ml-16">
         <img ref="preview"
              :class="loadedPreview === true ? [] : ['opacity-10', 'blur-sm']"
-             class="max-w-full duration-500"
+             class="max-w-full duration-500 shadow-lg"
              src="/og-image.png"
              alt=""
              @load="loadedPreview = true"
         />
+
+        <div class="mt-4 text-center">
+          <AppButton class="text-sm px-2 py-2 bg-blue-500" @click.prevent="copyUrl">
+            Copy image URL
+          </AppButton>
+
+          <a class="text-sm px-2 py-2 ml-2 bg-purple-500 font-bold text-white" :href="preview?.src" :download="`${title}.png`">
+            Download Image
+          </a>
+        </div>
       </aside>
     </div>
   </div>

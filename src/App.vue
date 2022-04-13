@@ -123,11 +123,11 @@ function copyUrl () {
         />
 
         <div class="mt-4 text-center">
-          <AppButton class="text-sm px-2 py-2 bg-blue-500" @click.prevent="copyUrl">
+          <AppButton class="bg-blue-500" @click.prevent="copyUrl">
             Copy image URL
           </AppButton>
 
-          <a class="text-sm px-2 py-2 ml-2 bg-purple-500 font-bold text-white" :href="preview?.src" :download="`${title}.png`">
+          <a class="text-2xl px-2 py-4 ml-2 bg-purple-500 font-bold text-white" :href="preview?.src" :download="`${title}.png`">
             Download Image
           </a>
         </div>

@@ -2,7 +2,10 @@ import { getImageUrl } from '../_utils/get-image-url'
 import type { IssueOptions } from '../_libs/params-to-options'
 
 export function makeIssueTemplate(options: IssueOptions) {
+  console.log(options)
+
   const avatarUrl = getImageUrl(options)
+  console.log(avatarUrl)
 
   return `<!doctype html>
 <html lang="en">

@@ -1,5 +1,5 @@
 import { URL } from 'url'
-import { extname } from 'path'
+import { basename, extname } from 'path'
 import type { VercelRequest, VercelResponse } from '@vercel/node'
 
 import { makeIssueTemplate } from './templates/issue'
@@ -14,10 +14,10 @@ const SUPPORT_TYPES = ['issue']
 export default async (req: VercelRequest, res: VercelResponse) => {
   const url = new URL(req.url || '/', `http://${req.headers.host}`)
   const params = url.searchParams
-  const filename = url.pathname
-
+  
+  const filename = basename(url.pathname)
   const format = extname(filename).replace(/^\./, '')
-  const name = decodeURIComponent(filename.replace(format, ''))
+  const title = decodeURIComponent(filename.replace(format, ''))
 
   // 미지원 포맷
   if (!SUPPORT_IMAGE_FORMATS.includes(format)) {
@@ -32,7 +32,7 @@ export default async (req: VercelRequest, res: VercelResponse) => {
   }
 
   const options = paramsToOptions(params)
-  options.title = name
+  options.title = title
   options.format = format as 'png' | 'jpeg' | 'webp' | 'html'
 
   let html: string | undefined = undefined

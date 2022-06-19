@@ -13,4 +13,6 @@ export function getImageUrl(option: Options) {
   if (option.url) {
     return option.url
   }
+
+  return ''
 }

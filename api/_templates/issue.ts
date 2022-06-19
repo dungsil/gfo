@@ -136,14 +136,14 @@ export function makeIssueTemplate(options: IssueOptions) {
       height: 24px;
       content: '';
 
-      background-color: ${options.color_bar};
+      background-color: ${options.color_bar ?? '#ffffff'};
     }
   </style>
 </head>
 <body>
 <div class="container">
   <div class="tag">
-    ${options.repository}
+    ${options.repository ?? ''}
   </div>
   <div class="content">
     <p class="title">
@@ -151,19 +151,19 @@ export function makeIssueTemplate(options: IssueOptions) {
     </p>
 
     <div class="description">
-      <span>${options.description}</span>
+      <span>${options.description ?? ''}</span>
     </div>
   </div>
 
   <div class="image">
-    <img src="${options.image}" alt="" />
+    <img src="${options.image ?? ''}" alt="" />
   </div>
 
   <div class="author">
     <div class="author-container">
       <img src="${avatarUrl}" alt="" />
       <span>
-          <b>${options.author}</b> · ${options.date}
+          <b>${options.author ?? ''}</b> · ${options.date ?? ''}
         </span>
     </div>
   </div>

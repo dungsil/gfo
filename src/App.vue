@@ -15,8 +15,9 @@ const preview = ref() as Ref<HTMLImageElement>
 const loadedPreview = ref(true) as Ref<boolean>
 
 async function generateImage() {
-  const query = new URLSearchParams(new FormData(form.value) as Record<string, any>).toString()
-  preview.value.src = `/api?${query}`
+  const query = new URLSearchParams(new FormData(form.value) as Record<string, any>)
+
+  preview.value.src = `/api?/${query.get("title")}.${query.get("format")}?${query.toString()}`
   loadedPreview.value = false
 }
 

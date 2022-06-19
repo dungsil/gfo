@@ -17,7 +17,7 @@ export default async (req: VercelRequest, res: VercelResponse) => {
   const filename = url.pathname
 
   const format = extname(filename).replace(/^\./, '')
-  const name = filename.replace(format, '')
+  const name = decodeURIComponent(filename.replace(format, ''))
 
   // 미지원 포맷
   if (!SUPPORT_IMAGE_FORMATS.includes(format)) {

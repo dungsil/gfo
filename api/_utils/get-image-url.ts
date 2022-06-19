@@ -1,4 +1,4 @@
-import type { Options } from '../libs/params-to-options'
+import type { Options } from '../_libs/params-to-options'
 import md5 from 'md5'
 
 export function getImageUrl(option: Options) {

@@ -1,5 +1,5 @@
-import { getImageUrl } from '../utils/get-image-url'
-import type { IssueOptions } from '../libs/params-to-options'
+import { getImageUrl } from '../_utils/get-image-url'
+import type { IssueOptions } from '../_libs/params-to-options'
 
 export function makeIssueTemplate(options: IssueOptions) {
   const avatarUrl = getImageUrl(options)

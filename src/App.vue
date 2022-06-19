@@ -59,7 +59,6 @@ function copyUrl () {
         <form ref="form" id="og-form" method="GET" action="/api">
           <!-- 추후 확장을 위해 사용되는 옵션 -->
           <input type="hidden" name="format" value="png" />
-          <input type="hidden" name="type" value="issue" />
 
           <AppInput id="repository" name="repository" label="Repository" type="text" value="dungsil/gfo" />
           <AppInput v-model:value="title" id="title" name="title" label="Title" type="text" />

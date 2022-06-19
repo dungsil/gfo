@@ -27,16 +27,7 @@ export default async (req: VercelRequest, res: VercelResponse) => {
   options.title = title
   options.format = format as 'png' | 'jpeg' | 'webp' | 'html'
 
-  let html: string | undefined = undefined
-
-  if (options.type === 'issue') {
-    html = makeIssueTemplate(options)
-  }
-
-  if (html === undefined) {
-    console.error('Create HTML Error')
-    return error(500)
-  }
+  const html = makeIssueTemplate(options)
 
   switch (options.format) {
     case 'html':

@@ -3,7 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@types/md5': 2.3.2
   '@types/node': 16.11.41
-  '@vercel/node': 1.13.0
+  '@vercel/node': 1.15.4
   '@vitejs/plugin-vue': 2.2.2
   '@vueuse/core': 7.6.2
   '@vueuse/head': 0.7.6
@@ -33,7 +33,7 @@ dependencies:
 devDependencies:
   '@types/md5': 2.3.2
   '@types/node': 16.11.41
-  '@vercel/node': 1.13.0
+  '@vercel/node': 1.15.4
   '@vitejs/plugin-vue': 2.2.2_vite@2.8.4+vue@3.2.37
   critters: 0.0.16
   npm-run-all: 4.1.5
@@ -261,14 +261,19 @@ packages:
       - supports-color
     dev: true
 
+  /@vercel/node-bridge/2.2.2:
+    resolution: {integrity: sha512-haGBC8noyA5BfjCRXRH+VIkHCDVW5iD5UX24P2nOdilwUxI4qWsattS/co8QBGq64XsNLRAMdM5pQUE3zxkF9Q==}
+    dev: true
+
   /@vercel/node-bridge/3.0.0:
     resolution: {integrity: sha512-TNQK6cufwrhd8ASDk5YHHenH8Xhp9sY8xUjOTKnQQI37KLk+Sw2HlHhT5rzUFN23ahosUlkY8InwtYUmSNb9kw==}
     dev: true
 
-  /@vercel/node/1.13.0:
-    resolution: {integrity: sha512-AqdUuJC0+r3q1lcL+Knjb+dHsSDSCRfwFPJ7odRkHO7sfoAkhJI4RussIDFTF7Yvt0e+GmWuYGFAgwSiv4FWEg==}
+  /@vercel/node/1.15.4:
+    resolution: {integrity: sha512-45fV7qVVw1cWCD6tWBXH0i4pSfYck4yF2qNKlJb1gmbO9JHWRqMYm0uxNWISD6E6Z69Pl1KDvfa+l48w/qEkaw==}
     dependencies:
       '@types/node': 16.11.41
+      '@vercel/node-bridge': 2.2.2
       ts-node: 8.9.1_typescript@4.3.4
       typescript: 4.3.4
     dev: true

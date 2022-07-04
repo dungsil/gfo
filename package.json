@@ -19,7 +19,7 @@
   "devDependencies": {
     "puppeteer": "13.4.1",
     "@types/md5": "2.3.2",
-    "@types/node": "16.11.41",
+    "@types/node": "16.11.43",
     "@vercel/node": "1.15.4",
     "@vitejs/plugin-vue": "2.2.2",
     "critters": "0.0.16",

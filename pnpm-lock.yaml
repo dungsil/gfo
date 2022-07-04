@@ -4,7 +4,7 @@ specifiers:
   '@types/md5': 2.3.2
   '@types/node': 16.11.43
   '@vercel/node': 1.15.4
-  '@vitejs/plugin-vue': 2.2.2
+  '@vitejs/plugin-vue': 2.3.3
   '@vueuse/core': 7.6.2
   '@vueuse/head': 0.7.6
   chrome-aws-lambda: 10.1.0
@@ -34,7 +34,7 @@ devDependencies:
   '@types/md5': 2.3.2
   '@types/node': 16.11.43
   '@vercel/node': 1.15.4
-  '@vitejs/plugin-vue': 2.2.2_vite@2.8.4+vue@3.2.37
+  '@vitejs/plugin-vue': 2.3.3_vite@2.8.4+vue@3.2.37
   critters: 0.0.16
   npm-run-all: 4.1.5
   puppeteer: 13.4.1
@@ -331,8 +331,8 @@ packages:
     resolution: {integrity: sha512-6Gbtbdabse+9rvGKjK6G9mmRVw4hIzSTeEXRaGEvW2f2hRD6jAzw3RLMA66R+olaxzsqz404oUL0WgILMd67nQ==}
     dev: true
 
-  /@vitejs/plugin-vue/2.2.2_vite@2.8.4+vue@3.2.37:
-    resolution: {integrity: sha512-3C0s45VOwIFEDU+2ownJOpb0zD5fnjXWaHVOLID2R1mYOlAx3doNBFnNbVjaZvpke/L7IdPJXjpyYpXZToDKig==}
+  /@vitejs/plugin-vue/2.3.3_vite@2.8.4+vue@3.2.37:
+    resolution: {integrity: sha512-SmQLDyhz+6lGJhPELsBdzXGc+AcaT8stgkbiTFGpXPe8Tl1tJaBw1A6pxDqDuRsVkD8uscrkx3hA7QDOoKYtyw==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       vite: ^2.5.10

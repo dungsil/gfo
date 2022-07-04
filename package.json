@@ -21,7 +21,7 @@
     "@types/md5": "2.3.2",
     "@types/node": "16.11.43",
     "@vercel/node": "1.15.4",
-    "@vitejs/plugin-vue": "2.2.2",
+    "@vitejs/plugin-vue": "2.3.3",
     "critters": "0.0.16",
     "npm-run-all": "4.1.5",
     "svelte": "3.46.4",

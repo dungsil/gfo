@@ -5,7 +5,7 @@ specifiers:
   '@types/node': 16.11.43
   '@vercel/node': 1.15.4
   '@vitejs/plugin-vue': 2.3.3
-  '@vueuse/core': 7.6.2
+  '@vueuse/core': 7.7.1
   '@vueuse/head': 0.7.6
   chrome-aws-lambda: 10.1.0
   critters: 0.0.16
@@ -23,7 +23,7 @@ specifiers:
   windicss: 3.4.4
 
 dependencies:
-  '@vueuse/core': 7.6.2_vue@3.2.37
+  '@vueuse/core': 7.7.1_vue@3.2.37
   '@vueuse/head': 0.7.6_vue@3.2.37
   chrome-aws-lambda: 10.1.0_puppeteer-core@13.4.1
   md5: 2.3.0
@@ -415,8 +415,8 @@ packages:
   /@vue/shared/3.2.37:
     resolution: {integrity: sha512-4rSJemR2NQIo9Klm1vabqWjD8rs/ZaJSzMxkMNeJS6lHiUjjUeYFbooN19NgFjztubEKh3WlZUeOLVdbbUWHsw==}
 
-  /@vueuse/core/7.6.2_vue@3.2.37:
-    resolution: {integrity: sha512-bjAbXJVJO6aElMaZtDz2B70C0L6jFk/jGVqJxWZS5huffxA6dW5DN6tQQJwzOnx9B9rDhePHJIFKsix0qZIH2Q==}
+  /@vueuse/core/7.7.1_vue@3.2.37:
+    resolution: {integrity: sha512-PRRgbATMpoeUmkCEBtUeJgOwtew8s+4UsEd+Pm7MhkjL2ihCNrSqxNVtM6NFE4uP2sWnkGcZpCjPuNSxowJ1Ow==}
     peerDependencies:
       '@vue/composition-api': ^1.1.0
       vue: ^2.6.0 || ^3.2.0
@@ -426,7 +426,7 @@ packages:
       vue:
         optional: true
     dependencies:
-      '@vueuse/shared': 7.6.2_vue@3.2.37
+      '@vueuse/shared': 7.7.1_vue@3.2.37
       vue: 3.2.37
       vue-demi: 0.12.1_vue@3.2.37
     dev: false
@@ -438,8 +438,8 @@ packages:
     dependencies:
       vue: 3.2.37
 
-  /@vueuse/shared/7.6.2_vue@3.2.37:
-    resolution: {integrity: sha512-ThDld4Mx501tahRuHV6qJGkwCr17GknZrOzlD02Na9qJcH7Pq0quNTLx5cNDou7b1CKNvE3BXi2w/hz9KuPNTQ==}
+  /@vueuse/shared/7.7.1_vue@3.2.37:
+    resolution: {integrity: sha512-rN2qd22AUl7VdBxihagWyhUNHCyVk9IpvBTTfHoLH9G7rGE552X1f+zeCfehuno0zXif13jPw+icW/wn2a0rnQ==}
     peerDependencies:
       '@vue/composition-api': ^1.1.0
       vue: ^2.6.0 || ^3.2.0

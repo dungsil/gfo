@@ -17,7 +17,7 @@
     "vue": "3.2.37"
   },
   "devDependencies": {
-    "puppeteer": "13.4.1",
+    "puppeteer": "13.7.0",
     "@types/md5": "2.3.2",
     "@types/node": "16.11.43",
     "@vercel/node": "1.15.4",

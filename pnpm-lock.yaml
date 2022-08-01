@@ -6,7 +6,7 @@ specifiers:
   '@vercel/node': 1.15.4
   '@vitejs/plugin-vue': 2.3.3
   '@vueuse/core': 7.7.1
-  '@vueuse/head': 0.7.6
+  '@vueuse/head': 0.7.9
   chrome-aws-lambda: 10.1.0
   critters: 0.0.16
   md5: 2.3.0
@@ -24,7 +24,7 @@ specifiers:
 
 dependencies:
   '@vueuse/core': 7.7.1_vue@3.2.37
-  '@vueuse/head': 0.7.6_vue@3.2.37
+  '@vueuse/head': 0.7.9_vue@3.2.37
   chrome-aws-lambda: 10.1.0_puppeteer-core@13.7.0
   md5: 2.3.0
   puppeteer-core: 13.7.0
@@ -43,7 +43,7 @@ devDependencies:
   vercel: 25.2.3
   vite: 2.8.4
   vite-plugin-windicss: 1.7.1_vite@2.8.4
-  vite-ssg: 0.17.10_c179ba5f424bb064f5497a9eeeb55acb
+  vite-ssg: 0.17.10_22905a79ee7da719615b1991d66c9966
   windicss: 3.4.4
 
 packages:
@@ -396,8 +396,8 @@ packages:
       vue-demi: 0.12.1_vue@3.2.37
     dev: false
 
-  /@vueuse/head/0.7.6_vue@3.2.37:
-    resolution: {integrity: sha512-cOWqCkT3WiF5oEpw+VVEWUJd9RLD5rc7DmnFp3cePsejp+t7686uKD9Z9ZU7Twb7R/BI8iexKTmXo9D/F3v6UA==}
+  /@vueuse/head/0.7.9_vue@3.2.37:
+    resolution: {integrity: sha512-5wnRiH2XIUSLLXJDLDDTcpvAg5QXgTIVZl46AU7to/T91KHsdBLHSE4WhRO7kP0jbkAhlxnx64E29cQtwBrMjg==}
     peerDependencies:
       vue: '>=3'
     dependencies:
@@ -3212,7 +3212,7 @@ packages:
       - supports-color
     dev: true
 
-  /vite-ssg/0.17.10_c179ba5f424bb064f5497a9eeeb55acb:
+  /vite-ssg/0.17.10_22905a79ee7da719615b1991d66c9966:
     resolution: {integrity: sha512-gPcw5RLmAq5CwZ9Q/Ca9kJWUm6KdxhkNRBzm8P4bGDCRQLNQkgTiQmK7ZwsdqD7C8bah4CMBFDeqz2MKSQintw==}
     engines: {node: '>=14.0.0'}
     hasBin: true
@@ -3226,7 +3226,7 @@ packages:
       critters:
         optional: true
     dependencies:
-      '@vueuse/head': 0.7.6_vue@3.2.37
+      '@vueuse/head': 0.7.9_vue@3.2.37
       critters: 0.0.16
       fs-extra: 10.0.1
       html-minifier: 4.0.0

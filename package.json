@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@vueuse/core": "7.7.1",
-    "@vueuse/head": "0.7.6",
+    "@vueuse/head": "0.7.9",
     "chrome-aws-lambda": "10.1.0",
     "md5": "2.3.0",
     "puppeteer-core": "13.7.0",

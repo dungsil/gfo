@@ -30,7 +30,7 @@
     "vite": "2.9.15",
     "vite-plugin-windicss": "1.8.7",
     "vite-ssg": "0.20.2",
-    "windicss": "3.4.4"
+    "windicss": "3.5.6"
   },
   "peerDependenciesMeta": {
     "vue-router": {

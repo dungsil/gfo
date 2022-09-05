@@ -13,7 +13,7 @@ specifiers:
   npm-run-all: 4.1.5
   puppeteer: 13.7.0
   puppeteer-core: 13.7.0
-  svelte: 3.49.0
+  svelte: 3.50.0
   typescript: 4.8.2
   vercel: 25.2.3
   vite: 2.9.15
@@ -38,7 +38,7 @@ devDependencies:
   critters: 0.0.16
   npm-run-all: 4.1.5
   puppeteer: 13.7.0
-  svelte: 3.49.0
+  svelte: 3.50.0
   typescript: 4.8.2
   vercel: 25.2.3
   vite: 2.9.15
@@ -2773,8 +2773,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /svelte/3.49.0:
-    resolution: {integrity: sha512-+lmjic1pApJWDfPCpUUTc1m8azDqYCG1JN9YEngrx/hUyIcFJo6VZhj0A1Ai0wqoHcEIuQy+e9tk+4uDgdtsFA==}
+  /svelte/3.50.0:
+    resolution: {integrity: sha512-zXeOUDS7+85i+RxLN+0iB6PMbGH7OhEgjETcD1fD8ZrhuhNFxYxYEHU41xuhkHIulJavcu3PKbPyuCrBxdxskQ==}
     engines: {node: '>= 8'}
     dev: true
 

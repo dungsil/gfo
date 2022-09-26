@@ -14,7 +14,7 @@ specifiers:
   puppeteer: 13.7.0
   puppeteer-core: 13.7.0
   svelte: 3.50.1
-  typescript: 4.8.2
+  typescript: 4.8.3
   vercel: 25.2.3
   vite: 2.9.15
   vite-plugin-windicss: 1.8.7
@@ -39,7 +39,7 @@ devDependencies:
   npm-run-all: 4.1.5
   puppeteer: 13.7.0
   svelte: 3.50.1
-  typescript: 4.8.2
+  typescript: 4.8.3
   vercel: 25.2.3
   vite: 2.9.15
   vite-plugin-windicss: 1.8.7_vite@2.9.15
@@ -2911,8 +2911,8 @@ packages:
     hasBin: true
     dev: true
 
-  /typescript/4.8.2:
-    resolution: {integrity: sha512-C0I1UsrrDHo2fYI5oaCGbSejwX4ch+9Y5jTQELvovfmFkK3HHSZJB8MSJcWLmCUBzQBchCrZ9rMRV6GuNrvGtw==}
+  /typescript/4.8.3:
+    resolution: {integrity: sha512-goMHfm00nWPa8UvR/CPSvykqf6dVV8x/dp0c5mFTMTIu0u0FlGWRioyy7Nn0PGAdHxpJZnuO/ut+PpQ8UiHAig==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true

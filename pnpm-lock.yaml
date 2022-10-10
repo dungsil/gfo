@@ -2,7 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@types/md5': 2.3.2
-  '@types/node': 16.11.63
+  '@types/node': 16.11.64
   '@vercel/node': 1.15.4
   '@vitejs/plugin-vue': 2.3.4
   '@vueuse/core': 7.7.1
@@ -32,7 +32,7 @@ dependencies:
 
 devDependencies:
   '@types/md5': 2.3.2
-  '@types/node': 16.11.63
+  '@types/node': 16.11.64
   '@vercel/node': 1.15.4
   '@vitejs/plugin-vue': 2.3.4_vite@2.9.15+vue@3.2.38
   critters: 0.0.16
@@ -156,27 +156,27 @@ packages:
   /@types/keyv/3.1.4:
     resolution: {integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==}
     dependencies:
-      '@types/node': 16.11.63
+      '@types/node': 16.11.64
     dev: true
 
   /@types/md5/2.3.2:
     resolution: {integrity: sha512-v+JFDu96+UYJ3/UWzB0mEglIS//MZXgRaJ4ubUPwOM0gvLc/kcQ3TWNYwENEK7/EcXGQVrW8h/XqednSjBd/Og==}
     dev: true
 
-  /@types/node/16.11.63:
-    resolution: {integrity: sha512-3OxnrEQLBz8EIIaHpg3CibmTAEGkDBcHY4fL5cnBwg2vd2yvHrUDGWxK+MlYPeXWWIoJJW79dGtU+oeBr6166Q==}
+  /@types/node/16.11.64:
+    resolution: {integrity: sha512-z5hPTlVFzNwtJ2LNozTpJcD1Cu44c4LNuzaq1mwxmiHWQh2ULdR6Vjwo1UGldzRpzL0yUEdZddnfqGW2G70z6Q==}
 
   /@types/responselike/1.0.0:
     resolution: {integrity: sha512-85Y2BjiufFzaMIlvJDvTTB8Fxl2xfLo4HgmHzVBz08w4wDePCTjYw66PdrolO0kzli3yam/YCgRufyo1DdQVTA==}
     dependencies:
-      '@types/node': 16.11.63
+      '@types/node': 16.11.64
     dev: true
 
   /@types/yauzl/2.9.2:
     resolution: {integrity: sha512-8uALY5LTvSuHgloDVUvWP3pIauILm+8/0pDMokuDYIoNsOkSwd5AiHBTSEJjKTDcZr5z8UpgOWZkxBF4iJftoA==}
     requiresBuild: true
     dependencies:
-      '@types/node': 16.11.63
+      '@types/node': 16.11.64
     optional: true
 
   /@vercel/build-utils/4.2.1:
@@ -221,7 +221,7 @@ packages:
   /@vercel/node/1.15.4:
     resolution: {integrity: sha512-45fV7qVVw1cWCD6tWBXH0i4pSfYck4yF2qNKlJb1gmbO9JHWRqMYm0uxNWISD6E6Z69Pl1KDvfa+l48w/qEkaw==}
     dependencies:
-      '@types/node': 16.11.63
+      '@types/node': 16.11.64
       '@vercel/node-bridge': 2.2.2
       ts-node: 8.9.1_typescript@4.3.4
       typescript: 4.3.4
@@ -230,7 +230,7 @@ packages:
   /@vercel/node/2.3.3:
     resolution: {integrity: sha512-lCgiONXiDTK6fbfNnG3c3rZts0SwJFScux0i8u7o6o8TITXlYoojhJWd+WSsQRlaMYBciMXbEDdnNwdd7qbAow==}
     dependencies:
-      '@types/node': 16.11.63
+      '@types/node': 16.11.64
       '@vercel/build-utils': 4.2.1
       '@vercel/node-bridge': 3.0.0
       '@vercel/static-config': 2.0.1
